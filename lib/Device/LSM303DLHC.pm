@@ -10,7 +10,7 @@ package Device::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.001'; # VERSION
+our $VERSION = '0.002'; # VERSION
 
 use 5.010;
 use Moose;
@@ -68,7 +68,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.001
+version 0.002
 
 =head1 ATTRIBUTES
 
@@ -82,14 +82,14 @@ This must be provided during object creation.
     $self->Compass->enable();
     $self->Compass->getReading();
 
-This is a object of [[Device::LSM303DLHC::Compass]]
+This is a object of L<Device::LSM303DLHC::Compass>
 
 =head2 Accelerometer 
 
     $self->Accelerometer->enable();
     $self->Accelerometer->getReading();
 
-This is a object of [[Device::LSM303DLHC::Accelerometer]]
+This is a object of L<Device::LSM303DLHC::Accelerometer>
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 
