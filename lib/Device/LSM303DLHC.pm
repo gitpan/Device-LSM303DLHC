@@ -10,7 +10,7 @@ package Device::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.004'; # VERSION
+our $VERSION = '0.005'; # VERSION
 
 use 5.010;
 use Moose;
@@ -68,7 +68,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 ATTRIBUTES
 
