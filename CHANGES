@@ -1,0 +1,16 @@
+Changelog for Device-LSM303DLHC
+
+0.003 2013-09-12T06:12:37
+ - Moved to ChangelogFromGit compliance with CPAN::Changes::Spec [Shantanu]
+
+0.002 2013-09-11T09:15:31
+ - pod fix [Shantanu]
+
+0.001 2013-09-11T07:46:23
+ -  final mods to the pod` [Shantanu]
+ - Fixed bugs in core module [Shantanu]
+ -  minor commit [Shantanu Bhadoria]
+ - First Commit [Shantanu Bhadoria]
+ - First Push with basic Raw Readings from LSM303DLHC Compass and
+   Accelerometer [Shantanu Bhadoria]
+
