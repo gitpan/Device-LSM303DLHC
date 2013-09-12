@@ -10,7 +10,7 @@ package Device::LSM303DLHC::Compass;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.003'; # VERSION
+our $VERSION = '0.004'; # VERSION
 
 use 5.010;
 use Moose;
@@ -107,7 +107,7 @@ Device::LSM303DLHC::Compass - I2C interface to Compass on the LSM303DLHC 3 axis 
 
 =head1 VERSION
 
-version 0.003
+version 0.004
 
 =head1 METHODS
 
