@@ -36,6 +36,6 @@ dott
 org
 lib
 Device
+Magnetometer
 LSM303DLHC
-Compass
 Accelerometer

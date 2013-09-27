@@ -3,7 +3,7 @@ NAME
     magnetometer(compass) and accelerometer using Device::SMBus
 
 VERSION
-    version 0.006
+    version 0.007
 
 ATTRIBUTES
   I2CBusDevicePath
@@ -11,11 +11,11 @@ ATTRIBUTES
     connected on e.g. /dev/i2c-1 This must be provided during object
     creation.
 
-  Compass
-        $self->Compass->enable();
-        $self->Compass->getReading();
+  Magnetometer
+        $self->Magnetometer->enable();
+        $self->Magnetometer->getReading();
 
-    This is a object of Device::Compass::LSM303DLHC
+    This is a object of Device::Magnetometer::LSM303DLHC
 
   Accelerometer
         $self->Accelerometer->enable();

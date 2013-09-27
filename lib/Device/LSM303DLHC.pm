@@ -13,14 +13,14 @@ package Device::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.006'; # VERSION
+our $VERSION = '0.007'; # VERSION
 
 # Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
-use Device::Compass::LSM303DLHC;
+use Device::Magnetometer::LSM303DLHC;
 use Device::Accelerometer::LSM303DLHC;
 
 
@@ -30,16 +30,16 @@ has 'I2CBusDevicePath' => (
 );
 
 
-has Compass => (
+has Magnetometer => (
     is         => 'ro',
-    isa        => 'Device::Compass::LSM303DLHC',
+    isa        => 'Device::Magnetometer::LSM303DLHC',
     lazy_build => 1,
 );
 
-sub _build_Compass {
+sub _build_Magnetometer {
     my ($self) = @_;
     my $obj =
-      Device::Compass::LSM303DLHC->new(
+      Device::Magnetometer::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath );
     return $obj;
 }
@@ -71,7 +71,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 ATTRIBUTES
 
@@ -80,12 +80,12 @@ version 0.006
 this is the device file path for your I2CBus that the LSM303DLHC is connected on e.g. /dev/i2c-1
 This must be provided during object creation.
 
-=head2 Compass
+=head2 Magnetometer
 
-    $self->Compass->enable();
-    $self->Compass->getReading();
+    $self->Magnetometer->enable();
+    $self->Magnetometer->getReading();
 
-This is a object of L<Device::Compass::LSM303DLHC>
+This is a object of L<Device::Magnetometer::LSM303DLHC>
 
 =head2 Accelerometer 
 

@@ -5,11 +5,11 @@ use lib "$Bin/../lib";
 
 use Device::LSM303DLHC;
 
-#use Device::Compass::LSM303DLHC;
+#use Device::Magnetometer::LSM303DLHC;
 #use Device::Accelerometer::LSM303DLHC;
 
 my $dev = Device::LSM303DLHC->new( I2CBusDevicePath => '/dev/i2c-1' );
-$dev->Compass->enable();
+$dev->Magnetometer->enable();
 $dev->Accelerometer->enable();
 use Data::Dumper;
 my ( $minx, $miny, $minz, $maxx, $maxy, $maxz ) = ( 500, 500, 500, 0, 0, 0 );
@@ -19,7 +19,7 @@ while () {
 
     #my $accelerometer = $dev->Accelerometer->getAccelerationVectorInG();
     #my $accelerometer = $dev->Accelerometer->getAccelerationVectorInMSS();
-    my $compass  = $dev->Compass->getRawReading();
+    my $compass  = $dev->Magnetometer->getRawReading();
     my $accAngle = $dev->Accelerometer->getAccelerationVectorAngles();
 
     #print "COMPASS: $compass->{x}\t$compass->{y}\t$compass->{z}\t\n";
@@ -50,7 +50,7 @@ while () {
 
 =cut
 
-    #print 'COMPASS: ' . Dumper {$dev->Compass->getRawReading()};
+    #print 'COMPASS: ' . Dumper {$dev->Magnetometer->getRawReading()};
     #print 'ACCELEROMETER: ' . Dumper {$dev->Accelerometer->getRawReading()};
 }
 

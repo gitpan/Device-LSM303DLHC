@@ -1,10 +1,10 @@
 use strict;
 use warnings;
 
-package Device::Compass::LSM303DLHC;
+package Device::Magnetometer::LSM303DLHC;
 
-# PODNAME: Device::Compass::LSM303DLHC
-# ABSTRACT: I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
+# PODNAME: Device::Magnetometer::LSM303DLHC
+# ABSTRACT: I2C interface to Magnetometer on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 #
 # This file is part of Device-LSM303DLHC
 #
@@ -13,7 +13,7 @@ package Device::Compass::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.006'; # VERSION
+our $VERSION = '0.007'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -110,11 +110,11 @@ __END__
 
 =head1 NAME
 
-Device::Compass::LSM303DLHC - I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
+Device::Magnetometer::LSM303DLHC - I2C interface to Magnetometer on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 
 =head1 VERSION
 
-version 0.006
+version 0.007
 
 =head1 REGISTERS
 
@@ -136,7 +136,7 @@ version 0.006
 
 =head2 I2CDeviceAddress
 
-Contains the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
+Contains the I2CDevice Address for the bus on which your Magnetometer is connected. It would look like 0x6b. Default is 0x1e.
 
 =head1 METHODS
 
