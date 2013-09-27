@@ -1,3 +1,6 @@
+use strict;
+use warnings;
+
 package Device::LSM303DLHC;
 
 # PODNAME: Device::LSM303DLHC
@@ -10,15 +13,15 @@ package Device::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
+# Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
-# Dependencies
-use Device::LSM303DLHC::Compass;
-use Device::LSM303DLHC::Accelerometer;
+use Device::Compass::LSM303DLHC;
+use Device::Accelerometer::LSM303DLHC;
 
 
 has 'I2CBusDevicePath' => (
@@ -29,14 +32,14 @@ has 'I2CBusDevicePath' => (
 
 has Compass => (
     is         => 'ro',
-    isa        => 'Device::LSM303DLHC::Compass',
+    isa        => 'Device::Compass::LSM303DLHC',
     lazy_build => 1,
 );
 
 sub _build_Compass {
     my ($self) = @_;
     my $obj =
-      Device::LSM303DLHC::Compass->new(
+      Device::Compass::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath );
     return $obj;
 }
@@ -44,14 +47,14 @@ sub _build_Compass {
 
 has Accelerometer => (
     is         => 'ro',
-    isa        => 'Device::LSM303DLHC::Accelerometer',
+    isa        => 'Device::Accelerometer::LSM303DLHC',
     lazy_build => 1,
 );
 
 sub _build_Accelerometer {
     my ($self) = @_;
     my $obj =
-      Device::LSM303DLHC::Accelerometer->new(
+      Device::Accelerometer::LSM303DLHC->new(
         I2CBusDevicePath => $self->I2CBusDevicePath );
     return $obj;
 }
@@ -68,7 +71,7 @@ Device::LSM303DLHC - I2C interface to LSM303DLHC 3 axis magnetometer(compass) an
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 ATTRIBUTES
 
@@ -82,14 +85,14 @@ This must be provided during object creation.
     $self->Compass->enable();
     $self->Compass->getReading();
 
-This is a object of L<Device::LSM303DLHC::Compass>
+This is a object of L<Device::Compass::LSM303DLHC>
 
 =head2 Accelerometer 
 
     $self->Accelerometer->enable();
     $self->Accelerometer->getReading();
 
-This is a object of L<Device::LSM303DLHC::Accelerometer>
+This is a object of L<Device::Accelerometer::LSM303DLHC>
 
 =for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders metacpan
 

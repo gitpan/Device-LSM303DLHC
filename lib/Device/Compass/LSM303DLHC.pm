@@ -1,6 +1,9 @@
-package Device::LSM303DLHC::Compass;
+use strict;
+use warnings;
 
-# PODNAME: Device::LSM303DLHC::Compass
+package Device::Compass::LSM303DLHC;
+
+# PODNAME: Device::Compass::LSM303DLHC
 # ABSTRACT: I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 #
 # This file is part of Device-LSM303DLHC
@@ -10,21 +13,25 @@ package Device::LSM303DLHC::Compass;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.005'; # VERSION
+our $VERSION = '0.006'; # VERSION
 
+# Dependencies
 use 5.010;
 use Moose;
 use POSIX;
 
 extends 'Device::SMBus';
 
+
 has '+I2CDeviceAddress' => (
     is      => 'ro',
     default => 0x1e,
 );
 
+
 # Registers for the Magnetometer
 use constant { MR_REG_M => 0x02, };
+
 
 # X, Y and Z Axis magnetic Field Data value in 2's complement
 use constant {
@@ -70,7 +77,7 @@ sub enable {
 sub getRawReading {
     my ($self) = @_;
 
-    return (
+    return {
         x => $self->_typecast_int_to_int16(
             ( $self->readByteData(OUT_X_H_M) << 8 ) |
               $self->readByteData(OUT_X_L_M)
@@ -83,7 +90,7 @@ sub getRawReading {
             ( $self->readByteData(OUT_Z_H_M) << 8 ) |
               $self->readByteData(OUT_Z_L_M)
         ),
-    );
+    };
 }
 
 
@@ -103,11 +110,33 @@ __END__
 
 =head1 NAME
 
-Device::LSM303DLHC::Compass - I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
+Device::Compass::LSM303DLHC - I2C interface to Compass on the LSM303DLHC 3 axis magnetometer(compass) and accelerometer using Device::SMBus
 
 =head1 VERSION
 
-version 0.005
+version 0.006
+
+=head1 REGISTERS
+
+=head2 MR_REG_M
+
+=head2 OUT_X_H_M
+
+=head2 OUT_X_L_M
+
+=head2 OUT_Y_H_M
+
+=head2 OUT_Y_L_M
+
+=head2 OUT_Z_H_M
+
+=head2 OUT_Z_L_M
+
+=head1 ATTRIBUTES
+
+=head2 I2CDeviceAddress
+
+Contains the I2CDevice Address for the bus on which your Compass is connected. It would look like 0x6b. Default is 0x1e.
 
 =head1 METHODS
 

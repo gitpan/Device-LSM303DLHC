@@ -3,7 +3,7 @@ NAME
     magnetometer(compass) and accelerometer using Device::SMBus
 
 VERSION
-    version 0.005
+    version 0.006
 
 ATTRIBUTES
   I2CBusDevicePath
@@ -15,13 +15,13 @@ ATTRIBUTES
         $self->Compass->enable();
         $self->Compass->getReading();
 
-    This is a object of Device::LSM303DLHC::Compass
+    This is a object of Device::Compass::LSM303DLHC
 
   Accelerometer
         $self->Accelerometer->enable();
         $self->Accelerometer->getReading();
 
-    This is a object of Device::LSM303DLHC::Accelerometer
+    This is a object of Device::Accelerometer::LSM303DLHC
 
 SUPPORT
   Bugs / Feature Requests
