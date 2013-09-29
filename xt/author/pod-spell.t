@@ -17,7 +17,6 @@ getRawReading
 getReading
 CDevice
 CDeviceAddress
-Containd
 calibrate
 getAccelerationVectorAngles
 cartesian

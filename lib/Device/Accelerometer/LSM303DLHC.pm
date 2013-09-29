@@ -13,7 +13,7 @@ package Device::Accelerometer::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.007'; # VERSION
+our $VERSION = '0.008'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -189,35 +189,13 @@ Device::Accelerometer::LSM303DLHC - I2C interface to Accelerometer on the LSM303
 
 =head1 VERSION
 
-version 0.007
-
-=head1 CONSTANTS
-
-=head2 PI
-
-=head1 REGISTERS
-
-=head2 CTRL_REG1_A
-
-=head2 CTRL_REG4_A
-
-=head2 OUT_X_H_A
-
-=head2 OUT_X_L_A
-
-=head2 OUT_Y_H_A
-
-=head2 OUT_Y_L_A
-
-=head2 OUT_Z_H_A
-
-=head2 OUT_Z_L_A
+version 0.008
 
 =head1 ATTRIBUTES
 
 =head2 I2CDeviceAddress
 
-Containd the I2CDevice Address for the bus on which your Accelerometer is connected. It would look like 0x6b. Default is 0x19.
+Contains the I2CDevice Address for the bus on which your Accelerometer is connected. It would look like 0x6b. Default is 0x19.
 
 =head2 gCorrectionFactor
 
@@ -267,6 +245,28 @@ returns  Roll, Yaw and Pitch from the accelerometer. This is a bare reading from
 =head2 calibrate
 
 placeholder for calibration function
+
+=head1 REGISTERS
+
+=head2 CTRL_REG1_A
+
+=head2 CTRL_REG4_A
+
+=head2 OUT_X_H_A
+
+=head2 OUT_X_L_A
+
+=head2 OUT_Y_H_A
+
+=head2 OUT_Y_L_A
+
+=head2 OUT_Z_H_A
+
+=head2 OUT_Z_L_A
+
+=head1 CONSTANTS
+
+=head2 PI
 
 =head1 AUTHOR
 

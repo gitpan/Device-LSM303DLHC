@@ -13,7 +13,7 @@ package Device::Magnetometer::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.007'; # VERSION
+our $VERSION = '0.008'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -114,23 +114,7 @@ Device::Magnetometer::LSM303DLHC - I2C interface to Magnetometer on the LSM303DL
 
 =head1 VERSION
 
-version 0.007
-
-=head1 REGISTERS
-
-=head2 MR_REG_M
-
-=head2 OUT_X_H_M
-
-=head2 OUT_X_L_M
-
-=head2 OUT_Y_H_M
-
-=head2 OUT_Y_L_M
-
-=head2 OUT_Z_H_M
-
-=head2 OUT_Z_L_M
+version 0.008
 
 =head1 ATTRIBUTES
 
@@ -158,6 +142,22 @@ Return raw readings from accelerometer registers
     $self->getReading()
 
 Return proper calculated readings from the magnetometer
+
+=head1 REGISTERS
+
+=head2 MR_REG_M
+
+=head2 OUT_X_H_M
+
+=head2 OUT_X_L_M
+
+=head2 OUT_Y_H_M
+
+=head2 OUT_Y_L_M
+
+=head2 OUT_Z_H_M
+
+=head2 OUT_Z_L_M
 
 =head1 AUTHOR
 

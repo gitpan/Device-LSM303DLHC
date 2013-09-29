@@ -30,13 +30,13 @@ no_index:
 provides:
   Device::Accelerometer::LSM303DLHC:
     file: lib/Device/Accelerometer/LSM303DLHC.pm
-    version: 0.007
+    version: 0.008
   Device::LSM303DLHC:
     file: lib/Device/LSM303DLHC.pm
-    version: 0.007
+    version: 0.008
   Device::Magnetometer::LSM303DLHC:
     file: lib/Device/Magnetometer/LSM303DLHC.pm
-    version: 0.007
+    version: 0.008
 requires:
   Device::SMBus: 0
   Moose: 0
@@ -50,7 +50,7 @@ resources:
   bugtracker: https://github.com/shantanubhadoria/device-lsm303dlhc/issues
   homepage: https://metacpan.org/release/Device-LSM303DLHC
   repository: git://github.com/shantanubhadoria/device-lsm303dlhc.git
-version: 0.007
+version: 0.008
 x_contributors:
   - 'Shantanu <shantanu@cpan.org>'
   - 'Shantanu Bhadoria <shantanu@cpan.org>'
