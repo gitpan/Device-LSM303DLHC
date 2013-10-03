@@ -27,6 +27,7 @@ getAccelerationVectorInclination
 getRollYawPitch
 gravitationalAcceleration
 mssCorrectionFactor
+getMagnetometerScale
 Shantanu
 Bhadoria
 at

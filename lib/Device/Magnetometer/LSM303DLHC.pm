@@ -13,7 +13,7 @@ package Device::Magnetometer::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.008'; # VERSION
+our $VERSION = '0.009'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -94,8 +94,19 @@ sub getRawReading {
 }
 
 
-sub getReading {
-    my ($self) = @_;
+sub getMagnetometerScale1 {
+    my ($self)                = @_;
+    my $rawReading            = $self->getRawReading;
+    my $magnetometerMaxVector = $self->magnetometerMaxVector;
+    my $magnetometerMinVector = $self->magnetometerMinVector;
+    return {
+        x => ( $rawReading->{x} - $magnetometerMinVector->{x} ) /
+          ( $magnetometerMaxVector->{x} - $magnetometerMinVector->{x} ),
+        y => ( $rawReading->{y} - $magnetometerMinVector->{y} ) /
+          ( $magnetometerMaxVector->{y} - $magnetometerMinVector->{y} ),
+        z => ( $rawReading->{z} - $magnetometerMinVector->{z} ) /
+          ( $magnetometerMaxVector->{z} - $magnetometerMinVector->{z} ),
+    };
 }
 
 sub _typecast_int_to_int16 {
@@ -114,7 +125,7 @@ Device::Magnetometer::LSM303DLHC - I2C interface to Magnetometer on the LSM303DL
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 ATTRIBUTES
 
@@ -137,11 +148,12 @@ The Device will not work properly unless you call this function
 
 Return raw readings from accelerometer registers
 
-=head2 getReading
+=head2 getMagnetometerScale1
 
-    $self->getReading()
+    $self->getMagnetometerScale1()
 
-Return proper calculated readings from the magnetometer
+Return proper calculated readings from the magnetometer scaled between +0.5 and
+-0.5
 
 =head1 REGISTERS
 

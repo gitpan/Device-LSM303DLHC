@@ -65,15 +65,15 @@
    "provides" : {
       "Device::Accelerometer::LSM303DLHC" : {
          "file" : "lib/Device/Accelerometer/LSM303DLHC.pm",
-         "version" : "0.008"
+         "version" : "0.009"
       },
       "Device::LSM303DLHC" : {
          "file" : "lib/Device/LSM303DLHC.pm",
-         "version" : "0.008"
+         "version" : "0.009"
       },
       "Device::Magnetometer::LSM303DLHC" : {
          "file" : "lib/Device/Magnetometer/LSM303DLHC.pm",
-         "version" : "0.008"
+         "version" : "0.009"
       }
    },
    "release_status" : "stable",
@@ -88,7 +88,7 @@
          "web" : "https://github.com/shantanubhadoria/device-lsm303dlhc"
       }
    },
-   "version" : "0.008",
+   "version" : "0.009",
    "x_contributors" : [
       "Shantanu <shantanu@cpan.org>",
       "Shantanu Bhadoria <shantanu@cpan.org>"
