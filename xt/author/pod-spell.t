@@ -24,7 +24,7 @@ gCorrectionFactor
 getAccelerationVectorInG
 getAccelerationVectorInMSS
 getAccelerationVectorInclination
-getRollYawPitch
+getRollPitch
 gravitationalAcceleration
 mssCorrectionFactor
 getMagnetometerScale

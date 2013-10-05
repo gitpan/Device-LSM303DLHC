@@ -13,7 +13,7 @@ package Device::Accelerometer::LSM303DLHC;
 # This is free software; you can redistribute it and/or modify it under
 # the same terms as the Perl 5 programming language system itself.
 #
-our $VERSION = '0.010'; # VERSION
+our $VERSION = '0.011'; # VERSION
 
 # Dependencies
 use 5.010;
@@ -152,14 +152,14 @@ sub getAccelerationVectorAngles {
 }
 
 
-sub getRollYawPitch {
+sub getRollPitch {
     my ($self) = @_;
 
     my $raw = $self->getRawReading;
 
     return {
-        Pitch => atan2( $raw->{y}, $raw->{z} ) + PI,
         Roll  => atan2( $raw->{x}, $raw->{z} ) + PI,
+        Pitch => atan2( $raw->{y}, $raw->{z} ) + PI,
     };
 }
 
@@ -189,7 +189,7 @@ Device::Accelerometer::LSM303DLHC - I2C interface to Accelerometer on the LSM303
 
 =head1 VERSION
 
-version 0.010
+version 0.011
 
 =head1 ATTRIBUTES
 
@@ -238,9 +238,9 @@ note that even when stationary on the surface of earth(or a earth like planet) t
 
 returns  coordinate angles between the acceleration vector(R) and the cartesian Coordinates(x,y,z). 
 
-=head2 getRollYawPitch
+=head2 getRollPitch
 
-returns  Roll, Yaw and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inaccurate for a moving accelerometer.
+returns  Roll and Pitch from the accelerometer. This is a bare reading from accelerometer and it assumes gravity is the only force on the accelerometer, which means it will be quiet inaccurate for a accelerating accelerometer.
 
 =head2 calibrate
 

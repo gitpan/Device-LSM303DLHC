@@ -3,7 +3,7 @@ NAME
     magnetometer(compass) and accelerometer using Device::SMBus
 
 VERSION
-    version 0.010
+    version 0.011
 
 ATTRIBUTES
   I2CBusDevicePath
